@@ -52,7 +52,7 @@ Once everything is working make a final commit on this branch. We now want to pu
 ```
 git push origin cleanUp
 ```
-
+%%%%%%%%%
 This will create a new branch on github named "cleanUp" and push the stuff from your local "cleanUp" branch to github. However, our master branch is still full of stale code.
 
 merging cleanUp into master and updating remote master
