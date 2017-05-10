@@ -1,10 +1,13 @@
 var express = require( 'express' );
-var app=express();
+var app = express();
 var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
 app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({extended:true}));
 var mongoose = require( 'mongoose' );
 // 27017 is default mongo port
+app.use( express.static( 'public' ) );
+
 mongoose.connect( 'localhost:27017/meanie' );
 
 var ourSchema = new  mongoose.Schema({
@@ -40,5 +43,3 @@ app.post( '/testPost', function( req, res ){
   var newRecord=ourModel( recordToAdd );
   newRecord.save();
 });
-
-app.use( express.static( 'public' ) );
